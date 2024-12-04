@@ -1,0 +1,254 @@
+/* Основные стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #1d1d1d;
+    color: #fff;
+    line-height: 1.6;
+}
+
+h1, h2 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+    font-size: 3rem;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin: 20px 0;
+}
+
+/* Логотип и кнопка */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+}
+
+.logo img {
+    height: 50px;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.header-content h1 {
+    font-size: 2rem;
+    margin-right: 20px;
+}
+
+.apply-btn {
+    background-color: #e0015b;
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.apply-btn:hover {
+    transform: scale(1.1);
+    background-color: #c00047; /* Более темный оттенок при наведении */
+}
+
+/* Секции */
+.team {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.team-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.team-card {
+    background-color: #2c2c2c;
+    padding: 20px;
+    border-radius: 10px;
+    width: 200px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(240, 239, 239, 0.3);
+}
+
+.team-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.team-card h3 {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.team-card p {
+    font-size: 1rem;
+    margin-top: 5px;
+}
+
+/* Общий эффект для всех кнопок, карточек и блоков */
+button, .card, .apply-btn {
+    transition: all 0.3s ease-out;
+}
+
+button:hover, .card:hover, .apply-btn:hover {
+    transform: scale(1.1) rotate(5deg) translateY(-5px); /* Увеличение, вращение и подъем */
+    box-shadow: 0px 6px 25px rgba(233, 161, 161, 0.3); /* Тень для выделения */
+    background-color: #e0015b; /* Изменение цвета кнопки */
+    cursor: pointer;
+}
+
+/* Карточка старшего состава */
+.card {
+    padding: 20px;
+    background: #424242;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05) rotate(3deg); /* Увеличение и небольшой наклон */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3); /* Больше тени */
+    background-color: #5a5a5a; /* Изменение фона карточки */
+}
+
+/* Логотип с эффектом */
+#logo {
+    transition: transform 0.3s ease-out, filter 0.3s ease-out;
+}
+
+#logo:hover {
+    transform: rotate(15deg) scale(1.1); /* Логотип будет вращаться и увеличиваться */
+    filter: brightness(1.2); /* Ярче */
+}
+
+/* Текст приветствия с эффектом */
+#welcome-text {
+    transition: transform 0.5s ease-out;
+}
+
+#welcome-text:hover {
+    transform: translateY(-10px); /* Поднимем текст */
+}
+
+/* Загрузка */
+.loader-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.loader {
+    border: 10px solid #f3f3f3;
+    border-top: 10px solid #e0015b;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Убираем загрузку после полной загрузки */
+.loader-container {
+    display: none;
+}
+
+/* Футер */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #1c1c1c;
+    font-size: 1rem;
+}
+
+/* Модальное окно */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #2c2c2c;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .team-cards {
+        flex-direction: column;
+    }
+
+    .team-card {
+        width: 90%;
+    }
+
+    .apply-btn {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+}
